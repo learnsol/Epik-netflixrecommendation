@@ -6,3 +6,4 @@ Needs the following resources
   3. Azure Storage account - Blob storage holds the source document as a pdf
   4. Azure Service Managed Identities - Ensure all services can talk to each other leveraging inbuild RBAC Roles without the need to store credentials any where
 
+![image](https://github.com/user-attachments/assets/1003f9a8-44ec-4c9f-94fa-57c441d24ef0)
