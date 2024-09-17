@@ -1,4 +1,4 @@
-A netflix recommendation RAG Chat bot
+A Netflix recommendation RAG Chat bot ( Part of Raghack 2024)
 
 Needs the following resources 
   1. Azure OpenAI resource - A base model, i have used gpt-4o-mini
