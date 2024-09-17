@@ -10,6 +10,10 @@ endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT")
 deployment = os.environ.get("AZURE_OPENAI_DEPLOYMENT")
 search_endpoint = os.environ.get("AZURE_AI_SEARCH_ENDPOINT")
 search_index = os.environ.get("AZURE_AI_SEARCH_INDEX")
+# Define Variables
+TEMPERATURE = 0.3
+MAX_TOKENS = 400
+TOP_P = 0.95
 
 token_provider = get_bearer_token_provider(DefaultAzureCredential(), "https://cognitiveservices.azure.com/.default")
 
@@ -43,9 +47,9 @@ while True: # this is an infinite loop to keep the conversation going
         response = client.chat.completions.create(
             model=deployment, # this is the model name
             messages=messages,
-            temperature=0.3, # this controls the randomness of the response
-            max_tokens=400, # this is the maximum length of the response, modify this is you are not worried of rate limits and costs.
-            top_p=0.95,  # this controls the probability of the response
+            temperature=TEMPERATURE, # this controls the randomness of the response
+            max_tokens=MAX_TOKENS, # this is the maximum length of the response, modify this is you are not worried of rate limits and costs.
+            top_p=TOP_P,  # this controls the probability of the response
             frequency_penalty=0, # this controls the frequency of repeated words
             presence_penalty=0, # this controls the presence of certain words
             stop=None,
